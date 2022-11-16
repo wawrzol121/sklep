@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>quiz</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<header>
+<h3> Zapisz sie </h3>
+
+</header>
+    <body>
+        <div class="blok1">
+            <form>
+                <p>Podaj Imię<input type="text"></p><br>
+        <p>Podaj Nazwisko<input type="text"></p><br>
+            <p>Podaj Login<input type="text"></p><br>
+            <p>Podaj Hasło<input type="text"></p><br>
+            </form>
+        
+        <?php
+   $con = new mysqli("localhost", "root", "", "mydb");
+
+        $sql= 'INSERT user FROM user';
+            
+?>
+        
+        
+        </div>
+    </body>
