@@ -1,0 +1,45 @@
+header{
+    background-color: wheat;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    float: left;
+}
+.blok1{
+    background-color: aqua;
+    text-align: center;
+    height: 200px;
+    width: 100%;
+    float: left;
+    
+}
+.blok2{
+    background-color: aqua;
+    text-align: center;
+    height:100px;
+    width:100%;
+    float: left;
+}
+
+   
+}
+.php{
+    background-color: aqua;
+    width: 100%;
+}
+
+.lista_ofert{
+    
+    background-color: aqua;
+    text-align: center;
+    font-family: fantasy;
+    height: 500px;
+    width: 100%;
+    
+}
+.baner{
+    text-align: center;
+    background-color: wheat;
+    height: 50px;
+    width: 100%;
+}
