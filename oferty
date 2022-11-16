@@ -1,0 +1,33 @@
+
+
+<html >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<div class="Lista ofert"> </div>
+
+<?php
+$con = new mysqli("localhost", "root", "", "shop");
+
+        $sql= 'SELECT  user FROM shop';
+         
+    $res = $con->query("SELECT `id`, `login` FROM `user` WHERE id=1");
+    $row = $res->fetch_all(MYSQLI_ASSOC);
+    
+   
+   if(isset($_POST["login"])){
+    $sql= "SELECT * FROM user WHERE login='".$_POST['login']."' AND password='".$POST['password']."'";
+    setcookie('id');
+   }
+   if (isset($_COOKIE["c"])){
+       "SELECT * FROM offers INNER JOIN user ON user.userID=offers.offersID";
+    
+    }
+    print_r($_GET);
+    
+
+?>
+</body>
+</html>
