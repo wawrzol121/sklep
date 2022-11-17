@@ -7,20 +7,30 @@
     <link rel="stylesheet" href="stylee.css">
 </head>
 <body>
-    <div class="baner"><h1>Lista Ofert</h1> </div>
+    <div class="baner">
+    <h1>Lista Ofert</h1>
+    <br>
+    <a href="add.php"><input type="submit" value="Dodaj ogłoszenie" > </a> 
+    </div>
+    
 <div class="Lista_ofert"> 
     
 
 <?php
-$con = new mysqli("localhost", "root", "", "shop");
+$conn = new mysqli("localhost", "root", "", "shop");
 
-       $sql= '"SELECT Subject , price , user_id FROM offers INNER JOIN user ON user.id=offers.user_id"';
+       $sql= '"SELECT id_offers ,Subject , price , user_id FROM offers AS i JOIN user ON id=offers.user_id"';
          
-    $res = $con->query("SELECT `Subject`, `user_id` FROM `offers` WHERE user_id=".$_COOKIE['user_id']);
-    $row = $res->fetch_array();
-    
+    $res = $conn->query("SELECT `id_offers`,`Subject`,`price`, `user_id` ,`name` FROM `offers`");
+    $offers = $res->fetch_all(MYSQLI_ASSOC);
+    for($i = 0; $i<count($offers); $i++){
+        echo"<h3>id_offers = ".$offers[$i]["id_offers"]."</h3>";
+        echo"<h3>Subject =".$offers[$i]["Subject"]."</h3>";
+        echo"<h3>price =".$offers[$i]["price"]."</h3>";
+        echo"<h3>user_id =".$offers[$i]["user_id"]."</h3>";
+        echo"<h3>name = ".$offers[$i]["name"]."</h3>";
+    }
 
-    print_r($_GET);
     
 
 ?>
