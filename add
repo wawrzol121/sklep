@@ -1,0 +1,46 @@
+   <html>
+<head>
+    <meta charset="UTF-8">
+    <title>quiz</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<header>
+<h3> Dodaj </h3>
+
+</header>
+    <body>
+        <div class="add">
+            <form method="post">
+                
+                <p>Subject<input type="text" name="Subject"></p><br>
+                <p>price<input type="text" name="price"></p><br>
+              
+                
+         <?php 
+$conn = mysqli_connect('localhost', 'root', '', 'shop' );
+
+
+            if(isset($_COOKIE["user_id"])){
+            
+            }
+                else 
+                     $sql="SELECT `name` FROM `users` WHERE `name`=".$_COOKIE["user_id"]. 
+                $name =$conn->query($sql)->fetch_assoc()["name"];
+                
+
+               if(isset($_POST["Subject"]) && isset($_POST["price"])){
+                   $sql="INSERT INTO `offers`(`id_offers,`name`, `user_id`,`Subject`, `price`) VAlUES(NULL,'".$_POST['name']."','".$_POST['Subjcet']."','".$_COOKIE['user_id']."'NULL);";
+                   $conn->query($sql);
+                   echo "dodaj";
+               }
+              
+              
+
+
+
+                ?>
+                <input type="submit" value="dodaj">
+            </form>
+        </div>
+       </body>
+</html>
